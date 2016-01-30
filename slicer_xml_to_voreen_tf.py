@@ -114,8 +114,8 @@ def parse_slicer_xml(tffilename, scalar, color):
     et2.write(tffilename, encoding='utf-8', xml_declaration=True)
 
 if __name__ == "__main__":
-    print(sys.argv[0], os.path.sep)
-    # read filename from command line arguments
+    print(sys.argv, os.path.sep)
+    # read filename from the last command line argument if available
     if len(sys.argv)>=2:
         filename = sys.argv[-1]
     else:
