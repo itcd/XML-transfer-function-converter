@@ -26,16 +26,16 @@ def parse_slicer_xml(tffilename, scalar, color):
     list_a = []
     
     for i in range(n):
-    #    print i,xa[2*i+1],xa[2*i+2]
+#        print(i,xa[2*i+1],xa[2*i+2])
         x=xa[2*i+1]
         a=xa[2*i+2]
-    #    x=xrgb[4*i+1]
+#        x=xrgb[4*i+1]
         r=xrgb[4*i+2]
         g=xrgb[4*i+3]
         b=xrgb[4*i+4]
         
         if x>=0 and x<=255:
-        	# add a control point at 0
+            # add a control point at 0
             if x>0 and len(list_intensity)<1:
                 list_intensity.append(0)
                 list_split.append("false")
@@ -51,7 +51,7 @@ def parse_slicer_xml(tffilename, scalar, color):
             list_b.append(b)
             list_a.append(a)
             
-        # add a control point at 255
+        # add a control point at 255 and terminate the loop
         elif x>255:
             if len(list_intensity) > 0:
                 r0=list_r[-1]
