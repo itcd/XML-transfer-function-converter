@@ -114,7 +114,7 @@ def parse_slicer_xml(tffilename, scalar, color):
     et2.write(tffilename, encoding='utf-8', xml_declaration=True)
 
 if __name__ == "__main__":
-    print sys.argv[0],os.path.sep
+    print(sys.argv[0], os.path.sep)
     # read filename from command line arguments
     if len(sys.argv)>=2:
         filename = sys.argv[-1]
@@ -130,5 +130,5 @@ if __name__ == "__main__":
         scalar=child.get("scalarOpacity")
         color=child.get("colorTransfer")
         tffilename=os.path.join(path, name+".tfi")
-        print(name,tffilename)
+        print(name, tffilename)
         parse_slicer_xml(tffilename, scalar, color)
